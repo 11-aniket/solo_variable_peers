@@ -64,7 +64,9 @@ organizations:
     peers:
       - peer0.org1.example.com
       - peer1.org1.example.com
-      # - peer2.org1.example.com
+      - peer2.org1.example.com
+      # - peer3.org1.example.com
+      # - peer4.org1.example.com
     # certificateAuthorities:
     #   - ca.org1.example.com
     adminPrivateKey:
@@ -77,7 +79,9 @@ organizations:
     peers:
       - peer0.org2.example.com
       - peer1.org2.example.com
-      # - peer2.org2.example.com
+      - peer2.org2.example.com
+      # - peer3.org2.example.com
+      # - peer4.org2.example.com
     # certificateAuthorities:
     #   - ca.org2.example.com
     adminPrivateKey:
@@ -110,13 +114,21 @@ peers:
     tlsCACerts:
       path: networks/fabric/base/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
 
-  # peer2.org1.example.com:
-  #   url: grpcs://localhost:7071
+  peer2.org1.example.com:
+    url: grpcs://localhost:7071
+    grpcOptions:
+      ssl-target-name-override: peer2.org1.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: networks/fabric/base/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+
+  # peer3.org1.example.com:
+  #   url: grpcs://localhost:7081
   #   grpcOptions:
-  #     ssl-target-name-override: peer2.org1.example.com
+  #     ssl-target-name-override: peer3.org1.example.com
   #     grpc.keepalive_time_ms: 600000
   #   tlsCACerts:
-  #     path: networks/fabric/base/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+  #     path: networks/fabric/base/crypto-config/peerOrganizations/org1.example.com/peers/peer3.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
 
   peer0.org2.example.com:
     url: grpcs://localhost:9051
@@ -134,13 +146,13 @@ peers:
     tlsCACerts:
       path: networks/fabric/base/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem
 
-  # peer2.org2.example.com:
-  #   url: grpcs://localhost:1
-  #   grpcOptions:
-  #     ssl-target-name-override: peer2.org2.example.com
-  #     grpc.keepalive_time_ms: 600000
-  #   tlsCACerts:
-  #     path: networks/fabric/base/crypto-config/peerOrganizations/org2.example.com/peers/peer2.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem
+  peer2.org2.example.com:
+    url: grpcs://localhost:9071
+    grpcOptions:
+      ssl-target-name-override: peer2.org2.example.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: networks/fabric/base/crypto-config/peerOrganizations/org2.example.com/peers/peer2.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem
 
 # certificateAuthorities:
 #   ca.org1.example.com:
