@@ -26,7 +26,7 @@ PeerOrgs:
     EnableNodeOUs: true
 
     Template:
-      Count: 5
+      Count: 11
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
@@ -40,7 +40,7 @@ PeerOrgs:
     EnableNodeOUs: true
 
     Template:
-      Count: 5
+      Count: 11
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
